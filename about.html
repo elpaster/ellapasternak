@@ -34,15 +34,29 @@
             <div class="about-hero-container">
                 <div class="hero-text">
                     <h1>
-                        <span class="typing-container">
-                            <span class="typing-text"></span>
-                        </span>
-                        <span class="name-text">I'm Ella!</span>
+                        Hello there, <span class="name-text">I'm <span class="highlight-name">Ella!</span></span>
                     </h1>
+                    <h2 class="hero-tagline">
+                        I'm a creative at heart and a builder by training. I partner cross-functionally to transform complex user needs into cohesive, high-impact product experiences.
+                    </h2>
                 </div>
+                <svg class="curved-arrow" viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 20 80 Q 80 10 160 40" stroke="#C41E3A" stroke-width="5" fill="none" stroke-linecap="round"/>
+                    <path d="M 155 30 L 165 40 L 155 50" stroke="#C41E3A" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
                 <div class="photo-container">
-                    <div class="photo-wrapper">
-                        <img src="your-photo.jpg" alt="Ella Pasternak" class="profile-photo">
+                    <div class="photo-stack">
+                        <div class="photo-wrapper card-1">
+                            <img src="img/me camera (1).jpg" class="profile-photo" alt="Ella with a camera">
+                        </div>
+                    
+                        <div class="photo-wrapper card-2">
+                            <img src="img/coldplay.jpeg" class="profile-photo" alt="Ella holding paper stars at coldplay concert">
+                        </div>
+                    
+                        <div class="photo-wrapper card-3">
+                            <img src="img/headshot Large.jpeg" class="profile-photo" alt="Ella posing in front of a wall for a professional photo.">
+                        </div>
                     </div>
                     <div class="shape shape-1"></div>
                     <div class="shape shape-2"></div>
@@ -50,54 +64,65 @@
                 </div>
             </div>
         </section>   
-
-        <!-- About Me Section -->
-        <section class="diagonal-section">
-            <div class="diagonal-content">
-                <div class="sticky-title">
-                    <h2>About<br>me</h2>
+<!--
+        <section class="about-section">
+            <div class="about-cards">
+                <div class="about-card">
+                    <h3>A Little On Me</h3>
+                    <p>I'm an aspiring UX designer attending the University of Colorado at Boulder majoring in Computer Science and minoring in Business. I've also recently completed a Google certificate in UX Design! I leverage my technical background and business knowledge to create ethical and impactful user experiences.</p>
                 </div>
-                <div class="content-blocks">
-                    <div class="content-block">
-                        <h3>A Little On Me</h3>
-                        <p>I'm an aspiring UX designer attending the University of Colorado at Boulder majoring in Computer Science and minoring in Business. I've also recently completed a Google certificate in UX Design! I leverage my technical background and business knowledge to create ethical and impactful user experiences.</p>
-                    </div>
-                    <div class="content-block">
-                        <h3>Why Design?</h3>
-                        <p>As a Computer Science major, I've always been drawn to the power of technology and how it can improve peoples lives. However, I quickly realized that while coding and algorithms were fascinating, I wanted to do more than just build systems—I wanted to create experiences that truly impacted people.</p>
-                        <p style="margin-top: 1rem;">UX design allows me to blend my technical knowledge with my creativity in ways that directly enhance user experiences. It's about understanding people's needs, frustrations, and desires, then translating those insights into solutions that are intuitive, engaging, and accessible.</p>
-                    </div>
+                <div class="about-card">
+                    <h3>Why Design?</h3>
+                    <p>As a Computer Science major, I've always been drawn to the power of technology and how it can improve peoples lives. However, I quickly realized that while coding and algorithms were fascinating, I wanted to do more than just build systems — I wanted to create experiences that truly impacted people.</p>
+                    <p style="margin-top: 1rem;">UX design allows me to blend my technical knowledge with my creativity in ways that directly enhance user experiences. It's about understanding people's needs, frustrations, and desires, then translating those insights into solutions that are intuitive, engaging, and accessible.</p>
                 </div>
             </div>
-        </section>
+        </section> 
+ -->
 
         <!-- Fun Facts Image Grid -->
+        <div class="wave-top">
+            <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#C41E3A"/>
+            </svg>
+        </div>
         <section class="fun-facts-section">
             <div class="fun-facts-container">
                 <h2 class="fun-facts-title">Fun facts about me</h2>
                 <div class="image-grid">
                     <div class="image-card">
-                        <div class="card-image"></div>
-                        <div class="card-content">
-                            <p>I love trying new restaurants and exploring different cuisines around Denver</p>
+                        <div class="polaroid">
+                            <img class="card-image" src="img/Banh Mi.jpg" alt="Ella holding a bunch of jelly cat stuffed animals.">
+                            <div class="card-content">
+                                <p>I love trying new restaurants and exploring different cuisines around Denver.</p>
+                            </div>
                         </div>
                     </div>
+                    
                     <div class="image-card">
-                        <div class="card-image img-2"></div>
-                        <div class="card-content">
-                            <p>Playing video games with friends is my favorite way to unwind</p>
+                        <div class="polaroid">
+                            <img class="card-image" src="img/pokopia.JPG" alt="Selfie of Ella's character on game Pokopia.">
+                            <div class="card-content">
+                                <p>My current video game obession is Pokopia but other favorites are Terraria and Minecraft.</p>
+                            </div>
                         </div>
                     </div>
+                    
                     <div class="image-card">
-                        <div class="card-image img-3"></div>
-                        <div class="card-content">
-                            <p>Cooking is my creative outlet outside of design</p>
+                        <div class="polaroid">
+                            <img class="card-image" src="img/coldplay.jpeg" alt="Ella holding up star confetti at a concert.">
+                            <div class="card-content">
+                                <p>I love going to concerts and I'm Fontaines D.C's #1 fan.</p>
+                            </div>
                         </div>
                     </div>
+                    
                     <div class="image-card">
-                        <div class="card-image img-4"></div>
-                        <div class="card-content">
-                            <p>Always looking for a new hiking trail to explore in Colorado</p>
+                        <div class="polaroid">
+                            <img class="card-image" src="img/IMG_0110.JPG" alt="Ella looking at a bunch of aspen trees.">
+                            <div class="card-content">
+                                <p>Always looking for a new hiking trail to explore in Colorado</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -171,12 +196,12 @@
             
             <div class="footer-bottom">
                 <div class="footer-logo">
-                    <div class="footer-logo-text">Ep.</div>
+                    <img src="img/EPLogo.png" alt="Ella Pasternak Logo">
                 </div>
                 <p>&copy; 2026 Ella Pasternak. All rights reserved.</p>
             </div>
         </div>
     </footer>
-    <script src="scripts.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

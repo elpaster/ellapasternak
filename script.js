@@ -1,5 +1,5 @@
 // Typing animation for multilingual hello (for home page)
-const greetings = ['Hello,', 'Hola,', 'Bonjour,', 'Ciao,', 'Hallo,', '你好,', 'こんにちは,', 'Привет,'];
+const greetings = ['Hello!', 'Hola!', 'Bonjour!', 'Ciao!', 'Hallo!', '你好!', 'こんにちは!', 'Привет!'];
 let greetingIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
@@ -71,7 +71,8 @@ const observerOptions = {
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
         }
     });
 }, observerOptions);
@@ -81,10 +82,34 @@ document.querySelectorAll('.content-block').forEach(block => {
     observer.observe(block);
 });
 
-// Scroll animations for case study cards (home page)
-document.querySelectorAll('.case-study-card').forEach((card, index) => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = `opacity 0.6s ease-out ${index * 0.1}s, transform 0.6s ease-out ${index * 0.1}s`;
-    observer.observe(card);
-});
+
+const cards = document.querySelectorAll('.photo-stack .photo-wrapper');
+
+let index = 0;
+
+function rotateCards() {
+  // Remove inline z-index and transform for safety
+  cards.forEach(card => card.style.transition = 'transform 0.6s ease, z-index 0.6s ease');
+
+  // Rotate the array
+  const firstCard = cards[index % cards.length];
+  const secondCard = cards[(index + 1) % cards.length];
+  const thirdCard = cards[(index + 2) % cards.length];
+
+  firstCard.style.zIndex = 3;
+  firstCard.style.transform = 'rotate(-6deg) translateX(0)';
+
+  secondCard.style.zIndex = 2;
+  secondCard.style.transform = 'rotate(2deg) translateX(-20px)';
+
+  thirdCard.style.zIndex = 1;
+  thirdCard.style.transform = 'rotate(8deg) translateX(-40px)';
+
+  index = (index + 1) % cards.length;
+}
+
+// Initial call
+rotateCards();
+
+// Rotate every 3 seconds
+setInterval(rotateCards, 3000);
