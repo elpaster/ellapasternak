@@ -327,14 +327,17 @@ nav,
     display: block;
     margin-top: 0.5rem;
 }
+
 .highlight-name {
-    background-color: var(--primary-red);
-    color: var(--white);
+   color: var(--primary-red);
+    font-style: italic;
+    font-weight: 900;
+    font-size: 4.5rem;
     padding: 0.1rem 0.8rem;
     border-radius: 50px;
     display: inline-block;
-    box-shadow: 0 0 0 4px rgb(196, 30, 58); 
 }
+
 .photo-container {
     position: relative;
     display: flex;
@@ -488,7 +491,7 @@ nav,
     font-family: 'Lato', sans-serif;
     font-size: 2rem;
     font-weight: 400;
-    color: var(--text-gray);
+    color: rgb(53, 53, 53);
     line-height: 1.8;
     margin-top: 1.5rem;
     max-width: 800px;
@@ -530,37 +533,41 @@ nav,
 
 /* Image Grid Section - Fun Facts */
 .fun-facts-section {
-    background-color: var(--primary-red);
-    padding: 8rem 2rem;
-    border-top: 3px solid rgba(196, 30, 58, 0.2);
-    border-bottom: 3px solid rgba(196, 30, 58, 0.2);
-}
-.wave-top {
-    display: block;
-    width: 100%;
-    line-height: 0;
-    margin-bottom: -2px;
-    background-color: var(--white); /* white behind the wave */
-}
-
-.wave-top svg {
-    width: 100%;
-    height: 80px;
-}
-
-.fun-facts-section {
-    background-color: var(--primary-red);
-    padding: 4rem 2rem 8rem;
-    margin-top: 0;
+    background-color: var(--white);
+    padding: 2rem 2rem 4rem;
+    border-top: none;
+    border-bottom: none;
 }
 
 .fun-facts-title {
     font-family: 'Playfair Display', serif;
     font-size: 3.5rem;
-    color: var(--white);
-    margin-bottom: 3rem;
-    text-align: left; 
+    color: var(--text-gray); /* back to dark since background is now white */
+    margin-bottom: 1.5rem;
+    text-align: left;
 }
+
+.squiggle {
+    width: 100%;
+    height: 40px;
+    display: block;
+}
+
+.squiggle-top {
+    margin-bottom: 2rem;
+}
+
+.squiggle-bottom {
+    margin-top: 2rem;
+}
+
+/* also update card text back to dark */
+.card-content p {
+    color: var(--black);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
 
 .image-grid {
     display: grid;
@@ -605,11 +612,7 @@ nav,
     flex: 1; /* pushes content to fill remaining space */
 }
 
-.card-content p {
-    color: var(--black);
-    font-size: 0.9rem;
-    line-height: 1.5;
-}
+
 
 .image-card:hover {
     transform: translateY(-6px);
@@ -625,6 +628,7 @@ nav,
 .offset-section {
     background-color: var(--white);
     padding: 8rem 2rem;
+    padding-top: 2rem;
 }
 
 .offset-container {
@@ -1098,6 +1102,220 @@ footer {
     }
 }
 
+/* Projects Page */
+.projects-hero {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    padding: 6rem 2rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.projects-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.projects-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    color: var(--text-gray);
+    margin-bottom: 1.5rem;
+    margin-top: 0;
+}
+
+.projects-hero p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* Floating Circles */
+.floating-circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(196, 30, 58, 0.08);
+    animation: float 6s ease-in-out infinite;
+    z-index: 1;
+}
+
+.circle-1 {
+    width: 200px;
+    height: 200px;
+    top: 10%;
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.circle-2 {
+    width: 150px;
+    height: 150px;
+    top: 50%;
+    right: 10%;
+    animation-delay: 1s;
+}
+
+.circle-3 {
+    width: 120px;
+    height: 120px;
+    top: 20%;
+    right: 15%;
+    animation-delay: 2s;
+}
+
+.circle-4 {
+    width: 180px;
+    height: 180px;
+    bottom: 10%;
+    left: 15%;
+    animation-delay: 1.5s;
+}
+
+.circle-5 {
+    width: 100px;
+    height: 100px;
+    bottom: 20%;
+    right: 5%;
+    animation-delay: 0.5s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Projects Section */
+.projects-section {
+    padding: 4rem 2rem;
+    background: var(--white);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background: var(--white);
+    border: 1px solid #e0e0e0;
+    border-radius: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    border-color: var(--primary-red);
+}
+
+.project-card-image {
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    background: #f5f5f5;
+}
+
+.project-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-card-image img {
+    transform: scale(1.05);
+}
+
+.project-card-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex-grow: 1;
+}
+
+.project-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--text-gray);
+    margin: 0;
+}
+
+.project-type {
+    color: var(--primary-red);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+.project-description {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+    flex-grow: 1;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .projects-hero {
+        padding: 4rem 2rem 3rem;
+    }
+
+    .projects-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .circle-1, .circle-2, .circle-3, .circle-4, .circle-5 {
+        opacity: 0.5;
+    }
+}
+
+@media (max-width: 640px) {
+    .projects-hero {
+        padding: 3rem 1.5rem 2rem;
+    }
+
+    .projects-hero h1 {
+        font-size: 2rem;
+    }
+
+    .projects-hero p {
+        font-size: 1rem;
+    }
+
+    .projects-section {
+        padding: 2rem 1.5rem;
+    }
+
+    .circle-1, .circle-2, .circle-3, .circle-4, .circle-5 {
+        display: none;
+    }
+}
+
 /* ===================================
    CASE STUDY PAGE STYLES
    =================================== */
@@ -1108,7 +1326,7 @@ footer {
 
 /* Case Study Hero */
 .case-study-hero {
-    background-color: var(--light-gray);
+    background-color: var(--white);
     padding: 8rem 2rem 4rem;
     margin-top: 0;
 }
@@ -1120,79 +1338,18 @@ footer {
 }
 
 .case-study-category {
-    display: inline-block;
-    font-size: 0.9rem;
-    color: var(--primary-red);
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 1.5rem;
-    font-weight: 600;
-}
-
-.case-study-hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 4.5rem;
-    color: var(--text-gray);
-    margin-bottom: 1.5rem;
-    line-height: 1.1;
-}
-
-.case-study-subtitle {
-    font-size: 1.5rem;
-    color: var(--text-gray);
-    max-width: 800px;
-    margin: 0 auto 3rem;
-    line-height: 1.6;
-}
-
-.case-study-meta {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    max-width: 900px;
-    margin: 0 auto 3rem;
-    padding: 2rem;
-    background-color: var(--white);
-    border-radius: 16px;
-}
-
-.meta-item {
-    text-align: left;
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 1.5rem;
 }
-
-.meta-label {
-    font-size: 0.85rem;
-    color: #999;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.meta-value {
-    font-size: 1rem;
-    color: var(--text-gray);
-    font-weight: 600;
-}
-
-.hero-image-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-}
-
-.hero-mockup {
-    width: 100%;
-    height: auto;
-    display: block;
-}
+ 
 
 /* Case Study Sections */
+
 .cs-section {
-    padding: 6rem 2rem;
+    padding: 3rem 2rem;
 }
 
 .cs-container {
@@ -1263,37 +1420,6 @@ footer {
 
 .stat-label {
     font-size: 1rem;
-    color: var(--text-gray);
-}
-
-/* Insight Cards */
-.insight-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.insight-card {
-    background-color: var(--light-gray);
-    padding: 2.5rem;
-    border-radius: 16px;
-    border-left: 4px solid var(--primary-red);
-}
-
-.insight-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.insight-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
-    color: var(--text-gray);
-}
-
-.insight-card p {
-    line-height: 1.7;
     color: var(--text-gray);
 }
 
@@ -1679,6 +1805,23 @@ footer {
 }
 
 /* Responsive Case Study */
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+.floating-dot {
+    position: absolute;
+    border-radius: 50%;
+    background: #FF9933;
+    opacity: 0.6;
+    animation: float 4s ease-in-out infinite;
+}
+
+.dot-1 { width: 20px; height: 20px; top: 10%; left: 8%; animation-delay: 0s; }
+.dot-2 { width: 15px; height: 15px; top: 25%; right: 10%; animation-delay: 1s; }
+.dot-3 { width: 12px; height: 12px; bottom: 15%; left: 5%; animation-delay: 2s; }
+
 @media (max-width: 968px) {
     .case-study-hero h1 {
         font-size: 3rem;
@@ -1735,6 +1878,1839 @@ footer {
     }
 }
 
+/* ===== NESTLY CASE STUDY SPECIFIC STYLES ===== */
+.nestly-page .process-nav {
+    position: fixed;
+    left: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+     width: auto;             
+    display: block;          
+    justify-content: normal;
+}
+
+.nestly-page .process-nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Connecting line behind the circles */
+.nestly-page .process-nav-list::before {
+    content: '';
+    position: absolute;
+    left: 17px;
+    top: 17px;
+    bottom: 17px;
+    width: 2px;
+    background: #E8A87C;
+    z-index: 0;
+}
+
+.nestly-page .process-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 0;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+.nestly-page .process-nav-circle {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    border-radius: 50%;
+    background: #FE8A4C;
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.nestly-page .process-nav-label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(-6px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    pointer-events: none;
+}
+
+/* Show label on hover of that item, or when active */
+.nestly-page .process-nav-item:hover .process-nav-label,
+.nestly-page .process-nav-item.active .process-nav-label {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.nestly-page .process-nav-item.active .process-nav-circle {
+    background: var(--text-gray, #333);
+    transform: scale(1.1);
+}
+
+/* Hide entirely on smaller screens where fixed side nav doesn't fit */
+@media (max-width: 1200px) {
+    .nestly-page .process-nav {
+        display: none;
+    }
+}
+
+.nestly-page .category-pill {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    border: 2px solid #EB5200;
+    color: #EB5200;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    background-color: var(--white);
+}
+
+.nestly-page .category-pill:hover {
+    background-color: #EB5200;
+    color: var(--white);
+}
+
+/* Challenge Section */
+.nestly-page .challenge-section {
+    background: var(--white);
+    padding: 0;
+}
+
+.nestly-page .challenge-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.nestly-page .challenge-section h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    color: var(--text-gray);
+    text-align: left;
+    font-weight: 800;
+    max-width: 800px;
+    margin: 0 0 0rem 0;
+    display: block;
+}
+
+.nestly-page .challenge-section p {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    max-width: 800px;
+    text-align: left;
+    line-height: 1.8;
+    color: var(--text-gray);
+    font-size: 1.1rem;
+}
+
+.nestly-page .key-insight-quote {
+    background: transparent;
+    border-left: none;
+    border-radius: 0;
+    padding: 2.5rem;
+    margin: 0 auto;
+    max-width: 800px;
+    text-align: center;
+    position: relative;
+}
+
+.nestly-page .key-insight-quote p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.4rem;
+    font-style: italic;
+    color: #333;
+    line-height: 1.8;
+    margin: 0;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Orange bubbles on either side */
+.nestly-page .key-insight-quote::before,
+.nestly-page .key-insight-quote::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: #FF9933;
+    border-radius: 50%;
+    opacity: 0.4;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.nestly-page .key-insight-quote::before {
+    left: 15px;
+}
+
+.nestly-page .key-insight-quote::after {
+    right: 15px;
+}
+
+/* Overview Section */
+.nestly-page .overview-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding-bottom: 1rem;
+}
+
+.nestly-page .overview-text {
+    max-width: 900px;
+}
+
+.nestly-page .overview-info-box {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    border: none;
+    background: transparent;
+    padding: 0;
+    margin-top: 1rem;
+    max-width: 1100px;
+    margin: 3rem auto 0;
+}
+
+.nestly-page .overview-text p {
+    line-height: 1.8;
+    color: var(--text-gray);
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.nestly-page .info-label {
+    font-weight: 700;
+    color: var(--text-gray);
+    font-size: 0.95rem;
+}
+
+.nestly-page .info-value {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Research Section */
+.nestly-page .research-section {
+    background: var(--white);
+    padding: 2rem 2rem;
+}
+
+.nestly-page .research-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.nestly-page .research-intro h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-gray);
+    margin-top: 0;
+}
+
+.nestly-page .research-intro p {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    max-width: 800px;
+    text-align: left;
+    line-height: 1.8;
+    color: var(--text-gray);
+    font-size: 1.1rem;
+}
+
+.nestly-page .research-goals {
+    background: var(--white);
+    border-left: none;
+    padding: 0;
+    border-radius: 0;
+    width: 100%;
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.nestly-page .research-goals h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    color: var(--text-gray);
+    margin-bottom: 1.5rem;
+    margin-top: 0;
+}
+
+.nestly-page .research-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.nestly-page .research-list li {
+    color: #666;
+    line-height: 1.6;
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 1.1rem;
+}
+
+.nestly-page .research-list li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #FF9933;
+    font-weight: bold;
+}
+
+
+/* Quantitative & Qualitative Two Column */
+.nestly-page .research-two-col {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    max-width: 800px;
+    margin: 0 auto 0rem;
+}
+
+.nestly-page .research-subsection {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.nestly-page .research-subsection h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    color: var(--text-gray);
+    margin: 0;
+    text-align: left;
+    margin-bottom: 0rem;
+}
+
+.nestly-page .research-subsection p {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.8;
+    color: var(--text-gray);
+    font-size: 1.1rem;
+    margin: 0;
+    text-align: left;
+}
+
+.nestly-page .research-image {
+    display: flex;
+    justify-content: center;
+}
+
+.nestly-page .research-image img {
+    width: 800px;
+    height: auto;
+    display: block;
+}
+
+/* Research Quotes - Updated styling */
+.nestly-page .research-quotes {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.nestly-page .research-quote {
+    background: transparent;
+    border-left: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    position: relative;
+    padding-left: 3rem;
+}
+
+.nestly-page .research-quote::before {
+    content: '"';
+    position: absolute;
+    left: 0;
+    top: -0.5rem;
+    font-size: 4rem;
+    color: #F16C32;
+    font-family: 'Georgia', sans-serif;
+    line-height: 1;
+}
+
+.nestly-page .research-quote p {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #333;
+    text-align: left;
+}
+
+.nestly-page .research-quote cite {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    color: #666;
+    font-size: 1rem;
+    display: block;
+    text-align: left;
+    margin-top: 1rem;
+}
+
+/* Key Findings Section */
+.nestly-page .findings-section {
+    background: var(--white);
+    padding: 0rem 2rem;
+}
+
+.nestly-page .findings-section h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    color: var(--text-gray);
+    margin-bottom: 2rem;
+    margin-top: 0;
+    font-weight: 600;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nestly-page .insights-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.nestly-page .insight-card {
+    background: transparent;
+    border: 2px solid #FFE0C4;
+    border-left: 4px solid #FF9933;
+    padding: 2rem;
+    border-radius: 12px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nestly-page .insight-card:hover {
+    border-color: #FF9933;
+    box-shadow: 0 8px 20px rgba(255, 153, 51, 0.15);
+}
+
+
+.nestly-page .insight-card p {
+    font-family: 'Inter', sans-serif;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+    font-size: 0.95rem;
+    text-align: left;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .nestly-page .insights-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .nestly-page .findings-section {
+        padding: 2rem 1.5rem;
+    }
+
+    .nestly-page .findings-section h2 {
+        font-size: 1.3rem;
+    }
+
+    .nestly-page .insight-card {
+        padding: 1.5rem;
+    }
+}
+
+/* Competitive Landscape Section */
+.nestly-page .competitive-landscape-section {
+    background: var(--white);
+    padding: 4rem 2rem;
+}
+
+.nestly-page .competitive-landscape-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto 2rem auto;
+}
+
+/* Competitive Intro Section */
+.nestly-page .competitive-intro-section {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.nestly-page .competitive-intro-section h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-gray);
+    margin-top: 0;
+    font-weight: 600;
+}
+
+.nestly-page .competitive-intro-section p {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.8;
+    color: #666;
+    font-size: 1.1rem;
+    margin: 0;
+    text-align: left;
+}
+
+/* Competitive Image */
+.nestly-page .competitive-image {
+   width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.nestly-page .competitive-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .nestly-page .competitive-landscape-layout {
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .nestly-page .competitive-landscape-section {
+        padding: 2rem 1.5rem;
+    }
+
+    .nestly-page .competitive-intro-section h2 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Understanding the User Section */
+.nestly-page .understanding-section {
+    background: var(--white);
+    padding: 1rem 2rem;
+}
+
+.nestly-page .understanding-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 1100px;
+    margin: 0 auto 2rem auto;
+}
+
+/* Understanding Intro Section */
+.nestly-page .understanding-intro-section {
+    max-width: 800px;
+    margin: 0 auto 0;
+}
+
+.nestly-page .understanding-intro-section h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--text-gray);
+    margin-top: 0;
+    font-weight: 600;
+}
+
+.nestly-page .understanding-intro-section p {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.8;
+    color: #666;
+    font-size: 1.1rem;
+    margin: 0;
+    text-align: left;
+    margin-bottom: 0;
+}
+
+/* Understanding Subsections */
+.nestly-page .understanding-subsection {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto 0 auto;
+    padding-top: 1rem;
+}
+
+.nestly-page .understanding-subsection h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    color: var(--text-gray);
+    margin: 0;
+    margin-bottom: 0rem;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+.nestly-page .understanding-subsection p {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.8;
+    color: #666;
+    font-size: 1.1rem;
+    margin: 0;
+    margin-top: 0rem;
+    text-align: left;
+}
+
+.nestly-page .understanding-subsection .research-image {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.nestly-page .understanding-subsection .research-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .nestly-page .understanding-layout {
+        gap: 0rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .nestly-page .understanding-section {
+        padding: 2rem 1.5rem;
+    }
+
+    .nestly-page .understanding-intro-section h2,
+    .nestly-page .understanding-subsection h3 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Competitors Section */
+.nestly-page .competitors-section {
+    margin-top: 4rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.nestly-page .competitors-section h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 2.5rem;
+    color: var(--text-gray);
+    margin-bottom: 1.5rem;
+    margin-top: 0;
+}
+
+.nestly-page .competitors-section > p {
+    line-height: 1.8;
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.nestly-page .competitors-image {
+    margin-top: 2rem;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.nestly-page .competitors-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .nestly-page .research-layout {
+        padding: 4rem 2rem;
+    }
+
+    .nestly-page .research-intro h2,
+    .nestly-page .competitors-section h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .nestly-page .research-section {
+        padding: 3rem 1.5rem;
+    }
+
+    .nestly-page .research-goals {
+        padding: 1.5rem;
+    }
+
+    .nestly-page .research-list li {
+        font-size: 0.9rem;
+    }
+}
+
+.nestly-page .solution-intro-section {
+    max-width: 800px;
+    margin: 0 auto 0;
+}
+
+.nestly-page .solution-intro-section h2{
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--text-gray);
+    margin-top: 0;
+    font-weight: 600;
+}
+
+.nestly-page .solution-intro-section p{
+    font-family: 'Inter', sans-serif;
+    line-height: 1.8;
+    color: #666;
+    font-size: 1.1rem;
+    margin: 0;
+    text-align: left;
+    margin-bottom: 0;
+    max-width: 800px;
+}
+
+/* Key Insights Grid */
+.nestly-page .insights-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.nestly-page .insight-card {
+    background: #fff;
+    border: 3px solid #ffbc9f;
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-height: 280px;
+    transition: all 0.3s ease;
+}
+
+.nestly-page .insight-card:hover {
+    border-color: #F16C32;
+    box-shadow: 0 8px 20px rgba(255, 153, 51, 0.15);
+}
+
+/* Icon Circle */
+.nestly-page .insight-card-icon {
+    width: 50px;
+    height: 50px;
+    background: #F16C32;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    margin: 0 auto 0rem auto;
+}
+
+.nestly-page .insight-card h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.3rem;
+    color: var(--text-gray);
+    margin: 0;
+    font-weight: 700;
+}
+
+.nestly-page .insight-card p {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.7;
+    color: #666;
+    margin: 0;
+    font-size: 0.95rem;
+    flex-grow: 1;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .nestly-page .insights-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .nestly-page .insight-card {
+        min-height: 260px;
+    }
+}
+
+/* ===== Features Section ===== */
+.nestly-page .features-section {
+    background: var(--white);
+    padding: 4rem 2rem;
+}
+
+.nestly-page .features-layout {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 3rem;
+}
+
+.nestly-page .features-layout h2,
+.nestly-page .inspiration-layout h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    color: var(--text-gray);
+    margin: 0;
+    margin-bottom: 4rem;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+.nestly-page .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+}
+
+.nestly-page .feature-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+}
+
+.nestly-page .feature-card-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #F16C32; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+}
+
+.nestly-page .feature-card-icon i {
+    font-size: 1.3rem;
+    color: white; 
+}
+
+.nestly-page .feature-card h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-gray);
+    margin: 0 0 1rem 0;
+}
+
+.nestly-page .feature-card p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #666;
+    margin: 0 0 1rem 0;
+}
+
+.nestly-page .feature-card p strong {
+    color: var(--text-gray);
+}
+
+/* ===== Inspiration Section ===== */
+.nestly-page .inspiration-section {
+    background: #FAFAF8;
+    padding: 4rem 2rem;
+}
+
+.nestly-page .inspiration-layout {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.nestly-page .inspiration-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.nestly-page .inspiration-card {
+    background: var(--white);
+    border: 1px solid #E5E5E0;
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.nestly-page .inspiration-card h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-gray);
+    margin: 0 0 1.25rem 0;
+    text-align: center;
+}
+
+.nestly-page .inspiration-image {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1.25rem;
+    background: #F0F0EC;
+}
+
+.nestly-page .inspiration-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.nestly-page .inspiration-card p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #666;
+    margin: 0;
+    text-align: left;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 968px) {
+    .nestly-page .features-grid,
+    .nestly-page .inspiration-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .nestly-page .features-section,
+    .nestly-page .inspiration-section {
+        padding: 2rem 1.5rem;
+    }
+
+    .nestly-page .features-layout h2,
+    .nestly-page .inspiration-layout h2 {
+        font-size: 1.3rem;
+    }
+}
+/* ===== The Problem Header ===== */
+.nestly-page .usability-section .problem-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.nestly-page .usability-section .problem-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #F16C32;
+}
+
+.nestly-page .usability-section .problem-headline {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-gray);
+    margin: 0;
+    max-width: 1000px;
+}
+
+/* ===== Two-column layout ===== */
+.nestly-page .usability-section .problem-layout {
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    gap: 3rem;
+    align-items: start; /* required for sticky to work */
+}
+
+.nestly-page .usability-section .problem-mockup {
+    position: sticky;
+    top: 6rem;
+    background: #FDEBD8;
+    border-radius: 20px;
+    padding: 2rem 1.5rem 1.5rem;
+    text-align: center;
+}
+
+.nestly-page .usability-section .problem-mockup img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+.nestly-page .usability-section .mockup-caption {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: #8a6d55;
+    margin: 1rem 0 0;
+}
+
+/* ===== Issue cards ===== */
+.nestly-page .usability-section .problem-issues {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.nestly-page .usability-section .issues-intro {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: var(--text-gray);
+    margin: 0 0 0.5rem;
+}
+
+.nestly-page .usability-section .issue-card {
+    background: var(--white);
+    border: 1px solid #E5E5E0;
+    border-left: 4px solid #FF9933;
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+}
+
+.nestly-page .usability-section .issue-header {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    margin-bottom: 0.6rem;
+}
+
+.nestly-page .usability-section .issue-icon {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    border-radius: 50%;
+    background: rgba(255, 153, 51, 0.14);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nestly-page .usability-section .issue-icon i {
+    font-size: 0.95rem;
+    color: #E67E22;
+}
+
+.nestly-page .usability-section .issue-header h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-gray);
+    margin: 0;
+    flex: 1;
+}
+
+.nestly-page .usability-section .issue-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #999;
+    white-space: nowrap;
+}
+
+.nestly-page .usability-section .issue-card p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.93rem;
+    line-height: 1.7;
+    color: #666;
+    margin: 0;
+}
+
+/* ===== Takeaways ===== */
+.nestly-page .usability-section .testing-takeaways {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.nestly-page .usability-section .takeaway-card {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: #FAFAF8;
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+}
+
+.nestly-page .usability-section .takeaway-card i {
+    color: #FF9933;
+    font-size: 1.1rem;
+    margin-top: 0.2rem;
+}
+
+.nestly-page .usability-section .takeaway-card p {
+    font-family: 'Inter', sans-serif;
+    font-style: italic;
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: #777;
+    margin: 0;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+    .nestly-page .usability-section .problem-layout,
+    .nestly-page .usability-section .testing-takeaways {
+        grid-template-columns: 1fr;
+    }
+    .nestly-page .usability-section .problem-mockup {
+        position: static;
+        max-width: 420px;
+    }
+}
+
+/* Usability testing */
+.nestly-page .usability-section {
+    background: var(--white);
+    padding: 4rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.nestly-page .usability-layout {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.nestly-page .usability-intro-section h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--text-gray);
+    margin-top: 0;
+    font-weight: 600;
+}
+
+.nestly-page .usability-intro-section p {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.8;
+    color: #666;
+    font-size: 1rem;
+    margin: 0;
+    text-align: left;
+}
+
+/* Issue Cards */
+.nestly-page .issue-card {
+    background: var(--white);
+    border: 1px solid #E5E5E0;
+    border-radius: 12px;
+    padding: 2rem;
+    position: relative;
+}
+
+.nestly-page .issue-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #999;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.nestly-page .issue-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.nestly-page .issue-icon {
+    width: 56px;
+    height: 56px;
+    min-width: 56px;
+    border-radius: 50%;
+    background: rgba(235, 82, 0, 0.08);
+    border: 1.5px solid rgba(235, 82, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nestly-page .issue-icon i {
+    font-size: 1.4rem;
+    color: #EB5200;
+}
+
+.nestly-page .issue-text h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-gray);
+    margin: 0 0 0.6rem 0;
+}
+
+.nestly-page .issue-text p {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.7;
+    color: #666;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.nestly-page .issue-annotation {
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: #5B7DB1;
+    max-width: 260px;
+    margin-top: 0.75rem;
+    padding-left: 1.5rem;
+    border-left: 2px solid #5B7DB1;
+}
+
+.nestly-page .issue-row {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.nestly-page .issue-row .issue-card {
+    flex: 1;
+}
+
+@media (max-width: 900px) {
+    .nestly-page .issue-row {
+        flex-direction: column;
+    }
+
+    .nestly-page .issue-annotation {
+        max-width: 100%;
+        border-left: none;
+        border-top: 2px solid #5B7DB1;
+        padding-left: 0;
+        padding-top: 0.75rem;
+    }
+}
+
+/* Additional Insights */
+.nestly-page .insights-callout-section {
+    margin-top: 1rem;
+}
+
+.nestly-page .insights-callout-section h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-gray);
+    margin: 0 0 1.25rem 0;
+}
+
+.nestly-page .insights-callout-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.nestly-page .insight-callout-card {
+    background: var(--white);
+    border-left: 3px solid #FF9933;
+    padding: 1.25rem 1.5rem;
+}
+
+.nestly-page .insight-callout-card p {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.7;
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.nestly-page .insight-callout-card strong {
+    color: var(--text-gray);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .nestly-page .insights-callout-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .nestly-page .usability-section {
+        padding: 2rem 1.5rem;
+    }
+
+    .nestly-page .usability-intro-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .nestly-page .issue-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Brand Identity Section */
+.nestly-page .design-process-intro h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--text-gray);
+    margin-top: 0;
+    font-weight: 600;
+}
+
+.nestly-page .brand-identity-section {
+    background: var(--white);
+    padding: 4rem 2rem;
+}
+
+.nestly-page .brand-identity-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    max-width: 1100px;
+    margin: 0 auto 2rem auto;
+}
+
+.nestly-page .brand-intro-section {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.nestly-page .brand-intro-section h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-gray);
+    margin-top: 0;
+    font-weight: 600;
+}
+
+.nestly-page .brand-intro-section p {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.8;
+    color: #666;
+    font-size: 1rem;
+    margin: 0;
+    text-align: left;
+}
+
+.nestly-page .brand-subsection {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 3rem;
+}
+
+.nestly-page .brand-subsection h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    color: var(--text-gray);
+    margin: 0;
+    font-weight: 600;
+}
+
+.nestly-page .brand-subsection p {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.8;
+    color: #666;
+    font-size: 1rem;
+    margin: 0;
+    text-align: left;
+}
+
+.nestly-page .tagline {
+    font-style: italic;
+    color: #FF9933;
+    font-size: 1.1rem;
+    margin-top: 1rem !important;
+}
+
+/* Information Architecture Section */
+.nestly-page .ia-section {
+    background: var(--white);
+    padding: 0rem 2rem;
+    padding-top: 4rem;
+}
+
+.nestly-page .ia-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto 2rem auto;
+}
+
+.nestly-page .ia-intro-section {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.nestly-page .ia-intro-section h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-gray);
+    margin-top: 0;
+    font-weight: 600;
+}
+
+.nestly-page .ia-intro-section p {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.8;
+    color: #666;
+    font-size: 1rem;
+    margin: 0;
+    text-align: left;
+}
+
+/* Sign Up Flow Section */
+.nestly-page .signup-flow-section {
+    background: var(--white);
+    padding: 1rem 2rem;
+}
+
+.nestly-page .signup-flow-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto 2rem auto;
+}
+
+.nestly-page .signup-intro-section {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.nestly-page .signup-intro-section h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-gray);
+    margin-top: 0;
+    font-weight: 600;
+}
+
+.nestly-page .signup-intro-section p {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.8;
+    color: #666;
+    font-size: 1rem;
+    margin: 0;
+    text-align: left;
+}
+
+
+/* Responsive */
+@media (max-width: 640px) {
+    .nestly-page .signup-flow-section {
+        padding: 2rem 1.5rem;
+    }
+
+    .nestly-page .signup-intro-section h2 {
+        font-size: 1.3rem;
+    }
+}
+
+.nestly-page .design-intro-section {
+    max-width: 800px;
+    margin: 0 auto 0;
+}
+
+.nestly-page .design-intro-section h2 {
+        font-family: 'Inter', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--text-gray);
+    margin-top: 0;
+    font-weight: 600;
+}
+
+.nestly-page .design-intro-section p {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.8;
+    color: #666;
+    font-size: 1.1rem;
+    margin: 0;
+    text-align: left;
+    margin-bottom: 3rem;
+    max-width: 800px;
+}
+/* Wireframes Section */
+.nestly-page .wireframes-section {
+    background: var(--white);
+    padding: 4rem 2rem;
+}
+
+.nestly-page .wireframes-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 0rem;
+    max-width: 1100px;
+    margin: 0 auto 2rem auto;
+}
+
+.nestly-page .wireframes-intro-section {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.nestly-page .wireframes-intro-section h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--text-gray);
+    margin-top: 0;
+    font-weight: 600;
+}
+
+.nestly-page .wireframes-intro-section p {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.8;
+    color: #666;
+    font-size: 1rem;
+    margin: 0;
+    text-align: left;
+}
+
+.nestly-page .wireframe-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 0rem;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 2.5rem;
+}
+
+.nestly-page .wireframe-flow h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.3rem;
+    color: var(--text-gray);
+    margin: 0;
+    margin-bottom: 0;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nestly-page .wireframe-flow p {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.8;
+    color: #666;
+    font-size: 1rem;
+    margin: 0.5rem 0 1.5rem 0;
+    text-align: left;
+}
+
+/* Shared lightbox styling */
+.nestly-page .research-image-link {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.nestly-page .research-image-link:hover .research-image {
+    opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .nestly-page .brand-identity-layout,
+    .nestly-page .ia-layout,
+    .nestly-page .wireframes-layout {
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .nestly-page .brand-identity-section,
+    .nestly-page .ia-section,
+    .nestly-page .wireframes-section {
+        padding: 2rem 1.5rem;
+    }
+
+    .nestly-page .brand-intro-section h2,
+    .nestly-page .ia-intro-section h2,
+    .nestly-page .wireframes-intro-section h2,
+    .nestly-page .brand-subsection h3,
+    .nestly-page .wireframe-flow h3 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Persona Cards */
+.nestly-page .personas-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    margin-top: 0rem;
+}
+
+.nestly-page .persona-card {
+    background: transparent;
+    border: none;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    height: auto;
+}
+
+.nestly-page .persona-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Outcomes Grid */
+.nestly-page .outcomes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.nestly-page .outcome-card {
+    background: #f8f9ff;
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.nestly-page .outcome-card h3 {
+    font-size: 1.1rem;
+    color: var(--text-gray);
+    margin: 0;
+}
+
+.nestly-page .outcome-card p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Responsive Nestly Styles */
+@media (max-width: 968px) {
+    .nestly-page .overview-grid,
+    .nestly-page .two-col-centered,
+    .nestly-page .research-layout,
+    .nestly-page .research-findings-layout,
+    .nestly-page .insights-grid,
+    .nestly-page .personas-grid,
+    .nestly-page .outcomes-grid,
+    .nestly-page .brand-identity {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .nestly-page .brand-visuals {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 640px) {
+    .nestly-page .overview-info-box {
+        padding: 1.5rem;
+        border-radius: 16px;
+    }
+
+    .nestly-page .centered-col h3 {
+        font-size: 1.5rem;
+    }
+
+    .nestly-page .persona-image {
+        width: 80px;
+        height: 80px;
+    }
+
+    .nestly-page .insights-grid,
+    .nestly-page .outcomes-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.case-study-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    color: var(--text-gray);
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+.case-study-subtitle {
+    font-size: 1.3rem;
+    color: var(--text-gray);
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
+}
+
+.case-study-meta {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto 3rem;
+    padding: 2rem;
+    background-color: var(--white);
+    border-radius: 16px;
+}
+
+
+
+/* Split Hero Layout */
+
+.nestly-hero-split {
+    background: linear-gradient(180deg, #FFF5F0 0%, #FFF5F0 65%, var(--white) 55%, var(--white) 100%);
+    padding: 0;
+    margin-top: 0;
+    position: relative;
+}
+
+.nestly-hero-split .case-study-hero-container {
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nestly-hero-split .hero-content {
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 7rem 2rem 0rem;
+    background: #FFF5F0;
+    width: 100%;
+}
+
+.nestly-hero-split h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 3.7rem;
+    color: var(--text-gray);
+    margin: 0;
+    line-height: 1.1;
+}
+
+
+.nestly-hero-split .case-study-subtitle {
+    font-size: 1.8rem;
+    font-family: 'Inter', sans-serif;
+    color: var(--text-gray);
+    max-width: 700px;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.nestly-hero-split .hero-image-container {
+    width: 100%;
+    border-radius: 0;
+    overflow: visible;
+    box-shadow: none;
+    background: transparent;
+    padding: 3rem 2rem;
+}
+
+.nestly-hero-split .hero-mockup {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    background-color: transparent;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Hero Meta Grid Below Image */
+.nestly-hero-split .hero-meta-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    width: 100%;
+    padding: 2rem 2rem 2rem;
+    background: var(--white);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nestly-hero-split .meta-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+}
+
+.nestly-hero-split .meta-label {
+    font-size: 0.85rem;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.nestly-hero-split .meta-value {
+    font-size: 1rem;
+    color: var(--text-gray);
+    font-weight: 600;
+}
+
+
 /* ===== NESTLY CASE STUDY STYLES ===== */
  
 /* Overview Section */
@@ -1745,10 +3721,10 @@ footer {
     align-items: start;
 }
  
-.overview-text {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+.nestly-page .overview-text {
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
 }
  
 .overview-text p {
@@ -1771,6 +3747,30 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    padding: 2rem;
+    border: 1px solid #eee;
+    border-radius: 16px;
+    background: white;
+    transition: all .3s ease;
+}
+
+.nestly-page .info-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(235, 82, 0, 0.15);
+}
+
+.nestly-page .info-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #FF9933;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 8px 20px rgba(235, 82, 0, 0.2);
 }
  
 .info-label {
@@ -1788,6 +3788,7 @@ footer {
 /* Problem & Goal Section */
 .problem-goal-section {
     background: #fafafa;
+    padding: 0rem 2rem;
 }
  
 .two-col-centered {
@@ -1796,21 +3797,7 @@ footer {
     gap: 4rem;
 }
  
-.centered-col {
-    text-align: center;
-}
- 
-.centered-col h3 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: var(--text-gray);
-}
- 
-.centered-col p {
-    line-height: 1.8;
-    color: #666;
-    font-size: 1rem;
-}
+
  
 /* Research Section */
 .research-layout {
@@ -1862,36 +3849,6 @@ footer {
     left: 0;
     color: #5F7CCC;
     font-weight: bold;
-}
- 
-/* Key Insights Grid */
-.insights-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-}
- 
-.insight-card {
-    background: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 12px;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
- 
-.insight-card h3 {
-    font-size: 1.3rem;
-    color: var(--text-gray);
-    margin: 0;
-}
- 
-.insight-card p {
-    line-height: 1.7;
-    color: #666;
-    margin: 0;
-    font-size: 0.95rem;
 }
  
 /* Qualitative Section */
@@ -2161,11 +4118,7 @@ footer {
     gap: 2rem;
 }
  
-.info-item {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
+
  
 .info-label {
     font-weight: 700;
@@ -2203,89 +4156,7 @@ footer {
 .centered-col p {
     line-height: 1.8;
     color: #666;
-    font-size: 1rem;
-}
- 
-/* Research Section */
-.research-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: start;
-}
- 
-.research-intro h2 {
-    margin-bottom: 1.5rem;
-}
- 
-.research-intro p {
-    line-height: 1.8;
-    color: #666;
-    font-size: 1rem;
-}
- 
-.research-goals {
-    background: #f8f9ff;
-    border-left: 4px solid #5F7CCC;
-    padding: 2rem;
-    border-radius: 8px;
-}
- 
-.research-goals h3 {
-    margin-bottom: 1.5rem;
-    color: var(--text-gray);
-}
- 
-.research-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
- 
-.research-list li {
-    margin-bottom: 1rem;
-    color: #666;
-    line-height: 1.6;
-    padding-left: 1.5rem;
-    position: relative;
-}
- 
-.research-list li:before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: #5F7CCC;
-    font-weight: bold;
-}
- 
-/* Key Insights Grid */
-.insights-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-}
- 
-.insight-card {
-    background: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 12px;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
- 
-.insight-card h3 {
-    font-size: 1.3rem;
-    color: var(--text-gray);
-    margin: 0;
-}
- 
-.insight-card p {
-    line-height: 1.7;
-    color: #666;
-    margin: 0;
-    font-size: 0.95rem;
+    font-size: 1.2rem;
 }
  
 /* Qualitative Section */

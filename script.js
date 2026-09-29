@@ -62,6 +62,46 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// ===== Process Nav: scroll-to-section + scrollspy =====
+document.addEventListener('DOMContentLoaded', function () {
+    const navItems = document.querySelectorAll('.process-nav-item');
+
+    if (navItems.length === 0) return; // safety check in case this page has no process nav
+
+    // Click to scroll
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const target = document.getElementById(item.dataset.target);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    // Scrollspy: highlight active step based on scroll position
+    const sections = Array.from(navItems).map(item =>
+        document.getElementById(item.dataset.target)
+    );
+
+    function updateActiveNav() {
+        let currentIndex = 0;
+        const scrollPos = window.scrollY + window.innerHeight / 3;
+
+        sections.forEach((section, i) => {
+            if (section && section.offsetTop <= scrollPos) {
+                currentIndex = i;
+            }
+        });
+
+        navItems.forEach((item, i) => {
+            item.classList.toggle('active', i === currentIndex);
+        });
+    }
+
+    window.addEventListener('scroll', updateActiveNav);
+    updateActiveNav(); // run once on load
+});
+
 // Scroll animations for content blocks (about page)
 const observerOptions = {
     threshold: 0.1,
@@ -113,3 +153,78 @@ rotateCards();
 
 // Rotate every 3 seconds
 setInterval(rotateCards, 3000);
+
+// ===== Process Nav: scroll-to-section + scrollspy =====
+document.addEventListener('DOMContentLoaded', function () {
+    const navItems = document.querySelectorAll('.process-nav-item');
+
+    if (navItems.length === 0) return; // safety check in case this page has no process nav
+
+    // Click to scroll
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const target = document.getElementById(item.dataset.target);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    // Scrollspy: highlight active step based on scroll position
+    const sections = Array.from(navItems).map(item =>
+        document.getElementById(item.dataset.target)
+    );
+
+    function updateActiveNav() {
+        let currentIndex = 0;
+        const scrollPos = window.scrollY + window.innerHeight / 3;
+
+        sections.forEach((section, i) => {
+            if (section && section.offsetTop <= scrollPos) {
+                currentIndex = i;
+            }
+        });
+
+        navItems.forEach((item, i) => {
+            item.classList.toggle('active', i === currentIndex);
+        });
+    }
+
+    window.addEventListener('scroll', updateActiveNav);
+    updateActiveNav(); // run once on load
+});
+document.addEventListener('DOMContentLoaded', function () {
+    const navItems = document.querySelectorAll('.process-nav-item');
+    const sections = Array.from(navItems).map(item =>
+        document.getElementById(item.dataset.target)
+    );
+
+    // Click to scroll
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const target = document.getElementById(item.dataset.target);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    // Scrollspy: highlight active section based on scroll position
+    function updateActiveNav() {
+        let currentIndex = 0;
+        const scrollPos = window.scrollY + window.innerHeight / 3;
+
+        sections.forEach((section, i) => {
+            if (section && section.offsetTop <= scrollPos) {
+                currentIndex = i;
+            }
+        });
+
+        navItems.forEach((item, i) => {
+            item.classList.toggle('active', i === currentIndex);
+        });
+    }
+
+    window.addEventListener('scroll', updateActiveNav);
+    updateActiveNav(); // run once on load
+});

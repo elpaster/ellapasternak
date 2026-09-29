@@ -7,10 +7,14 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/glightbox"></script>
+    <script src="script.js"></script>
 </head>
 
-<body class="case-study-page">
+<body class="case-study-page nestly-page">
     <nav class="top-nav" aria-label="Main Navigation">
         <div class="nav-container">
             <div class="nav-logo">
@@ -24,62 +28,93 @@
         </div>
     </nav>
 
+    <!-- ===== Side Process Nav ===== -->
+    <nav class="process-nav" id="processNav">
+        <ul class="process-nav-list">
+            <li class="process-nav-item" data-target="empathize-define">
+                <span class="process-nav-circle">1</span>
+                <span class="process-nav-label">Empathize / Define</span>
+            </li>
+            <li class="process-nav-item" data-target="ideate">
+                <span class="process-nav-circle">2</span>
+                <span class="process-nav-label">Ideate</span>
+            </li>
+            <li class="process-nav-item" data-target="design">
+                <span class="process-nav-circle">3</span>
+                <span class="process-nav-label">Design</span>
+            </li>
+            <li class="process-nav-item" data-target="prototype-test">
+                <span class="process-nav-circle">4</span>
+                <span class="process-nav-label">Prototype & Test</span>
+            </li>
+        </ul>
+    </nav>
+
     <main id="main-content" class="content-wrapper">
         <!-- Hero Section -->
-        <section class="case-study-hero">
+        <section class="case-study-hero nestly-hero-split">
+            <div class="floating-dot dot-1"></div>
+            <div class="floating-dot dot-2"></div>
+            <div class="floating-dot dot-3"></div>
+
             <div class="case-study-hero-container">
-                <span class="case-study-category">UX Design • User Research • Mobile App</span>
-                <h1>Nestly</h1>
-                <p class="case-study-subtitle">Making finding a compatible roommate easier, safer, and more reliable.</p>
-            </div>
-            <div class="hero-image-container">
-                <img src="img/nestly-hero.png" alt="Nestly app mockup" class="hero-mockup">
+                <div class="hero-content">
+                    <span class="case-study-category">
+                        <span class="category-pill">UX Design</span>
+                        <span class="category-pill">User Research</span>
+                        <span class="category-pill">Mobile App</span>
+                    </span>
+
+                    <h1>Nestly</h1>
+
+                    <p class="case-study-subtitle">Making finding a compatible roommate easier, safer, and more reliable.</p>
+                </div>
+
+                <div class="hero-image-container">
+                    <img src="img/Nestly full thumbnail.png" alt="Nestly app mockup" class="hero-mockup">
+                </div>
+
+                <div class="hero-meta-grid">
+                    <div class="meta-column">
+                        <span class="meta-label">Target Audience</span>
+                        <span class="meta-value">College students, young professionals</span>
+                    </div>
+                    <div class="meta-column">
+                        <span class="meta-label">Duration</span>
+                        <span class="meta-value">12 weeks</span>
+                    </div>
+                    <div class="meta-column">
+                        <span class="meta-label">Role</span>
+                        <span class="meta-value">Lead UX Designer</span>
+                    </div>
+                </div>
             </div>
         </section>
+
+        <!-- ================================================= -->
+        <!-- STAGE 1: EMPATHIZE / DEFINE                        -->
+        <!-- ================================================= -->
 
         <!-- Overview Section -->
         <section class="cs-section overview-section">
             <div class="cs-container">
                 <div class="overview-grid">
                     <div class="overview-text">
-                        <h2>Overview</h2>
-                        <p>Nestly is an innovative mobile app designed to make finding a compatible roommate easier, safer, and more reliable. In a world where living with a stranger can feel like a gamble, Nestly provides users with a personalized matching experience based on lifestyle compatibility, shared interests, and mutual trust. The app goes beyond simple profiles by integrating fun and insightful quizzes that help users understand their own habits while matching them with others who share similar values and routines.</p>
-                        <p>One of Nestly's standout features is its endorsement system, where users can leave reviews and recommendations for each other, building trust and creating a transparent and supportive community.</p>
-                    </div>
-                    <div class="overview-info-box">
-                        <div class="info-item">
-                            <span class="info-label">Target Audience</span>
-                            <span class="info-value">College students, young professionals</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Duration</span>
-                            <span class="info-value">12 weeks</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Methods</span>
-                            <span class="info-value">User interviews, empathy mapping, personas, wireframing, prototyping, usability testing</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Role</span>
-                            <span class="info-value">Lead UX Designer</span>
-                        </div>
+                        <p>Nestly is a mobile app that aims to simplify the roommate search process by helping users find safe, compatible, and trustworthy roommates. Through personalized lifestyle and compatability matching, lively profiles, and a trusted review system, Nestly helps users find roommates with similar habits and values, creating safer and more successful shared living experiences.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Problem & Goal Section -->
-        <section class="cs-section problem-goal-section">
+        <!-- Challenge Section -->
+        <section class="cs-section challenge-section" id="empathize-define">
             <div class="cs-container">
-                <div class="two-col-centered">
-                    <div class="centered-col">
-                        <h3>The Problem</h3>
-                        <p>Living with another person is a significant commitment and many people struggle to find compatible and trustworthy roommates. Current roommate-matching platforms fail to offer reliable ways to assess compatibility beyond basic preferences, leaving users vulnerable to mismatches that can lead to conflicts, stress, and disrupted living situations. Users need a more effective way to find roommates they can build positive, lasting relationships with during the duration of their lease.</p>
-                    </div>
-                    <div class="centered-col">
-                        <h3>The Goal</h3>
-                        <p>Design an app that helps users find compatible and trustworthy roommates by combining personalized matching through quizzes with an endorsement system. The goal is to create a seamless, stress-free experience that fosters positive relationships and long-term compatibility.</p>
-                    </div>
+                <div class="challenge-wrapper">
+                    <h2>The Challenge</h2>
+                    <p>The idea for this project came from my own experiences with roommates throughout college. I've had both great and difficult roommate situations and I realized how hard it can be to really know who you'll be living with before signing a lease. Most roommate platforms focus on basic preferences, but don't give you much of a sense of someone's personality or lifestyle. I wanted to create a more social, engaging way to meet potential roommates that helps you feel confident about who you'll be living with.</p>
+                    <blockquote class="key-insight-quote">
+                        <p>"How might we allow users to feel genuinely connected to potential roommates before making a decision?"</p>
+                    </blockquote>
                 </div>
             </div>
         </section>
@@ -90,7 +125,7 @@
                 <div class="research-layout">
                     <div class="research-intro">
                         <h2>Researching the problem space</h2>
-                        <p>Roommates are a crucial part of the housing equation for many people—nearly <strong>30% of renters</strong> in the U.S. rely on them to make rent more affordable. But let's face it, finding a roommate you can actually live with is not as easy as it sounds. From awkward living situations to mismatched personalities, the search for the right roommate can be a stressful and overwhelming journey. That's why I set out to better understand the motivations, pain points, and preferences of people looking for roommates, so we can create a solution that feels like a breath of fresh air.</p>
+                        <p>A record-high 6.8 million households shared their housing with unrelated housemates, roommates, or boarders in 2023. Young adults make up ~23% of these households, with college-age adults being a close second. With so many people depending on shared housing and roommates, finding the right person to live with can be just as important as finding the right place. From the roommate who leaves dishes in the sink for days to the one who has people over every night, little differences can become major headaches. That's why I set out to better understand the motivations, pain points, and preferences of people looking for roommates so I could create a solution that makes the process feel more personal, social, and trustworthy.</p>
                     </div>
                     <div class="research-goals">
                         <h3>Research Goals</h3>
@@ -100,8 +135,36 @@
                             <li>Explore key features that would improve the roommate matching experience</li>
                             <li>Analyze current roommate apps and their strengths/weaknesses</li>
                             <li>Validate the need for trust-building features like reviews and endorsements</li>
-                            <li>Investigate user preferences for roommate search filters (e.g., lifestyle, location, budget)</li>
+                            <li>Investigate user preferences for roommate search filters</li>
                         </ul>
+                    </div>
+                    <div class="research-two-col">
+                        <!-- Quantitative -->
+                        <div class="research-subsection">
+                            <h3>Quantitative</h3>
+                            <p>To better understand user needs and preferences, I distributed a 17-question Google Form survey to 7 respondents. The survey was divided into three sections: roommate preferences, app features & functionality, and challenges & concerns. The quantitative responses offered valuable insights into the key pain points users face when searching for roommates and their expectations for a roommate-matching app.</p>
+                            <a href="img/user-research-quantitative.png" class="glightbox research-image-link">
+                                <div class="research-image">
+                                    <img src="img/user-research-quantitative.png" alt="Quantitative survey results">
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Qualitative -->
+                        <div class="research-subsection">
+                            <h3>Qualitative</h3>
+                            <p>In addition, I conducted user interviews with 8 participants and found that the roommate search process is often stressful and time-consuming. Key struggles include a lack of personal connections with potential roommates and concerns about privacy and safety when using apps.</p>
+                            <div class="research-quotes">
+                                <blockquote class="research-quote">
+                                    <p>"It's stressful juggling everyday responsibilities and finding a suitable and trustworthy roommate."</p>
+                                    - R
+                                </blockquote>
+                                <blockquote class="research-quote">
+                                    <p>"I've had a negative experience with a roommate because it was someone I didn't know and we were not compatible"</p>
+                                    - H
+                                </blockquote>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -110,74 +173,431 @@
         <!-- Key Findings Section -->
         <section class="cs-section findings-section">
             <div class="cs-container">
-                <h2>Key User Insights</h2>
+                <h2>User Insights</h2>
                 <div class="insights-grid">
                     <div class="insight-card">
+                        <div class="insight-card-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
                         <h3>Roommate selection is an emotional process</h3>
-                        <p>Finding the right roommate isn't just transactional, it's deeply personal. Users often feel a blend of excitement and anxiety, seeking both compatibility and emotional reassurance. The decision goes beyond finances and chores—trust and comfort play a major role in selecting a roommate.</p>
+                        <p>Finding a roommate is more than having matching budgets. Users want someone they can trust, feel comfortable around, and actually enjoy living with. The decision is personal because they're choosing someone who will be part of their everyday life.</p>
                     </div>
                     <div class="insight-card">
+                        <div class="insight-card-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
                         <h3>Compatibility needs to be comprehensive</h3>
-                        <p>Roommates need to align on multiple dimensions—lifestyle preferences, personality, social habits, cleanliness standards, and financially. Finding someone with similar habits can reduce potential conflicts and create a more harmonious living situation.</p>
+                        <p>Users want to know how a potential roommate lives day to day. Cleanliness, routines, guests, social habits, and finances all play a role in whether two people will work well together.</p>
                     </div>
                     <div class="insight-card">
+                        <div class="insight-card-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
                         <h3>The search process should be fast and intuitive</h3>
-                        <p>Users want a quick, efficient, and easy process when finding a roommate. A seamless interface with intuitive filters and simple matching tools saves time and eliminates frustration. The faster they can narrow down compatible candidates, the less likely they are to abandon the platform or feel overwhelmed.</p>
+                        <p>Scrolling through endless profiles can get overwhelming fast. Users want an easier way to find people who actually feel like a good fit.</p>
                     </div>
                     <div class="insight-card">
+                        <div class="insight-card-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
                         <h3>Security comes before comfort</h3>
-                        <p>People need to feel safe—not just physically, but in the sense of knowing that their roommate is a legitimate person who can be trusted. Identity verification and safety features are not just "nice to have" for users, but essential for creating peace of mind, especially when living with someone they met online.</p>
+                        <p>Trust is a major part of deciding whether to connect with a potential roommate. Users want reassurance that profiles are authentic and that the people behind them are legitimate.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Design Section -->
-        <section class="cs-section design-section">
+        <!-- Competitive Landscape Section -->
+        <section class="cs-section competitive-landscape-section">
             <div class="cs-container">
-                <h2>UI Design & Brand Identity</h2>
-                <div class="brand-identity">
-                    <div class="brand-text">
-                        <p>When exploring logo ideas, I was drawn to nature-inspired symbols that could represent community and shared living. I was tied between using a bee or a bird — both social, cooperative creatures — but after several drafts, I landed on a design featuring a blue bird perched outside a birdhouse. It felt friendly, calm, and symbolic of finding a place that feels like home. To support this tone, I chose a soft blue color scheme that feels approachable and trustworthy.</p>
+                <div class="competitive-landscape-layout">
+                    <div class="competitive-intro-section">
+                        <h2>Competitive Landscape</h2>
+                        <p>To ensure Nestly stands out in the competitive market, I conducted secondary research and analyzed existing roommate-matching platforms. By studying their strengths, weaknesses, and feature sets, I identified gaps in the market and opportunities to create a more comprehensive solution that prioritizes user trust, compatibility matching, and seamless experience.</p>
                     </div>
-                    <div class="brand-visuals">
-                        <div class="logo-iterations">
-                            <img src="img/nestly-logo-iterations.png" alt="Nestly logo iterations">
+                    <a href="img/Competitive Analysis.png" class="glightbox research-image-link">
+                        <div class="competitive-image">
+                            <img src="img/Competitive Analysis.png" alt="Competitive landscape analysis">
                         </div>
-                        <div class="final-logo">
-                            <img src="img/nestly-final-logo.png" alt="Nestly final logo">
-                            <p class="tagline">Live better, together.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Understanding the User Section -->
+        <section class="cs-section understanding-section">
+            <div class="cs-container">
+                <div class="understanding-layout">
+                    <div class="understanding-intro-section">
+                        <h2>Understanding the user</h2>
+                        <p>The research and user interviews gave me a better understanding of the current roommate solution landscape and the problems people face within it. I focused on turning those findings into concrete visualizations that would help me empathize with users, understand their needs, and define the experience Nestly should provide.</p>
+                    </div>
+
+                    <!-- User Personas -->
+                    <div class="understanding-subsection">
+                        <h3>Persona Development</h3>
+                        <p class="section-intro">Based on my user insights I developed two personas: Brie, a college student seeking a quiet, affordable living space, and James, a divorced father looking for a trustworthy, family-friendly roommate. These personas helped me understand the unique challenges and goals of different types of potential users.</p>
+                        <div class="personas-grid">
+                            <div class="persona-card">
+                                <a href="img/brie-persona.png" class="glightbox research-image-link">
+                                    <img src="img/brie-persona.png" alt="Brie persona" class="persona-image">
+                                </a>
+                            </div>
+                            <div class="persona-card">
+                                <div class="persona-header">
+                                    <a href="img/james-persona.png" class="glightbox research-image-link">
+                                        <img src="img/james-persona.png" alt="James persona" class="persona-image">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Empathy Map -->
+                    <div class="understanding-subsection">
+                        <h3>Empathy Map</h3>
+                        <p>To deeply understand user needs and emotions, I created an empathy map that explores what users think, feel, say, and do throughout the roommate search process.</p>
+                        <a href="img/Empathy Map.png" class="glightbox research-image-link">
+                            <div class="research-image">
+                                <img src="img/Empathy Map.png" alt="Empathy map">
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- User Journey -->
+                    <div class="understanding-subsection">
+                        <h3>User Journey</h3>
+                        <p>The user journey map visualizes the entire roommate search experience, from initial awareness through decision-making, highlighting key touchpoints, pain points, and opportunities for improvement.</p>
+                        <a href="img/User Journey.png" class="glightbox research-image-link">
+                            <div class="research-image">
+                                <img src="img/User Journey.png" alt="User journey map">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Translating Needs into Features -->
+        <section class="cs-section features-section">
+            <div class="cs-container">
+                <div class="solution-intro-section">
+                        <h2>Shaping the Solution</h2>
+                        <p>With user needs clearly defined, this phase was about translating those insights into an actual plan. I identified which features would directly address the problems users shared, looked at other apps for smart patterns worth adapting, and mapped out the structure Nestly would need to support it all.</p>
+                </div>
+                <div class="features-layout">
+                    <h2>Translating Needs into Features</h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-card-icon">
+                                <i class="fas fa-id-card"></i>
+                            </div>
+                            <h3>Identity Verification</h3>
+                            <p><strong>Insight:</strong> Users need to feel safe and have peace of mind that their potential roommate is a legitimate person who can be trusted.</p>
+                            <p><strong>Feature:</strong> Implemented a process where users can verify their identity through a government-issued ID or third-party verification services, increasing overall platform trustworthiness.</p>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="feature-card-icon">
+                                <i class="fas fa-clipboard-list"></i>
+                            </div>
+                            <h3>Compatibility Quizzes</h3>
+                            <p><strong>Insight:</strong> Users want roommates who are compatible not just on rent or location, but on lifestyle, habits, and personal values.</p>
+                            <p><strong>Feature:</strong> Implemented a detailed compatibility quiz taken during profile creation, generating a compatibility score to match users who align best with their responses.</p>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="feature-card-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h3>Endorsements/Reviews</h3>
+                            <p><strong>Insight:</strong> Users want confidence in potential roommates, and knowing someone has lived successfully with others builds trust.</p>
+                            <p><strong>Feature:</strong> Implemented a feature where users can leave and receive reviews or endorsements from past roommates, visible before committing to a match.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================= -->
+        <!-- STAGE 2: IDEATE                                    -->
+        <!-- ================================================= -->
+
+        <!-- Brainstorming Inspiration -->
+        <section class="cs-section inspiration-section" id="ideate">
+            <div class="cs-container">
+                <div class="inspiration-layout">
+                    <h2>Brainstorming: Inspiration</h2>
+                    <div class="inspiration-grid">
+                        <div class="inspiration-card">
+                            <h3>Hinge</h3>
+                            <div class="inspiration-image">
+                                <img src="img/inspo-hinge.png" alt="Hinge app profile prompts example">
+                            </div>
+                            <p>Hinge's fun profile prompts and audio feature offer a unique way for users to express personality and lifestyle. For a roommate app, this could help users get a better sense of compatibility, making it easier to find someone with similar habits and personalities.</p>
+                        </div>
+
+                        <div class="inspiration-card">
+                            <h3>LinkedIn</h3>
+                            <div class="inspiration-image">
+                                <img src="img/inspo-linkedin.png" alt="LinkedIn skills and endorsements example">
+                            </div>
+                            <p>LinkedIn's endorsement system lets users vouch for each other's skills, building credibility within a professional network. This concept could be adapted by allowing users to endorse previous roommates for qualities like cleanliness, communication, or reliability.</p>
+                        </div>
+
+                        <div class="inspiration-card">
+                            <h3>Instagram</h3>
+                            <div class="inspiration-image">
+                                <img src="img/inspo-instagram.png" alt="Instagram suggested connections example">
+                            </div>
+                            <p>Instagram's "You Might Know" feature suggests users with mutual connections or similar networks. A similar feature could suggest potential roommates based on mutual friends, shared social circles, or common interests.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- User Personas Section -->
-        <section class="cs-section personas-section">
+        <!-- Information Architecture Section -->
+        <section class="cs-section ia-section">
             <div class="cs-container">
-                <h2>Persona Development</h2>
-                <p class="section-intro">Based on my user insights I developed two personas: Brie, a college student seeking a quiet, affordable living space, and James, a divorced father looking for a trustworthy, family-friendly roommate. These personas helped me understand the unique challenges and goals of my users.</p>
-                <div class="personas-grid">
-                    <div class="persona-card">
-                        <img src="img/brie-persona.png" alt="Brie persona" class="persona-image">
+                <div class="ia-layout">
+                    <div class="ia-intro-section">
+                        <h2>Information Architecture</h2>
+                        <p>Once I had a better understanding of my users, their wants and needs, and the key features I wanted to focus on, I moved on to information architecture mapping. The IA map helped me plan out the different user flows and figure out roughly how many screens I would need for each action or feature.</p>
                     </div>
-                    <div class="persona-card">
-                        <div class="persona-header"> 
-                            <img src="img/james-persona.png" alt="James persona" class="persona-image">
+                    <a href="img/Info Arch.png" class="glightbox research-image-link">
+                        <div class="research-image">
+                            <img src="img/Info Arch.png" alt="Information architecture">
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </section>
+
+        <!-- Sign Up Flow Section (diagram) -->
+        <section class="cs-section signup-flow-section">
+            <div class="cs-container">
+                <div class="signup-flow-layout">
+                    <div class="signup-intro-section">
+                        <h2>Sign Up Flow</h2>
+                        <p>I decided to dedicate a whole diagram to the sign-up flow because I saw it as an important part of creating a trustworthy user base. I needed to collect enough information to make the matching process effective, but I also didn't want the sign-up process to feel like too much work and cause users to quit. With the Doherty Threshold and user friction in mind, I focused on keeping each step simple and manageable while still collecting the information I needed and building trust from the beginning.</p>
+                    </div>
+                    <a href="img/Sign up flow.png" class="glightbox research-image-link">
+                        <div class="research-image">
+                            <img src="img/Sign up flow.png" alt="Sign up flow">
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================= -->
+        <!-- STAGE 3: DESIGN                                    -->
+        <!-- ================================================= -->
 
         <!-- Wireframes Section -->
-        <section class="cs-section wireframes-section">
+        <section class="cs-section wireframes-section" id="design">
             <div class="cs-container">
-                <h2>Medium Fidelity Wireframes</h2>
-                <p class="section-intro">To bring my ideas to life, I started by creating medium-fidelity wireframes. This helped me map out the app's core features, layout, and user flow without getting too caught up in visuals just yet. It was a way to explore how everything would function together.</p>
-                <div class="wireframes-showcase">
-                    <img src="img/nestly-wireframes.png" alt="Nestly wireframes">
+                <div class="wireframes-layout">
+                    <div class="design-intro-section">
+                        <h2>Prototyping & Testing</h2>
+                        <p>With the signup flow and IA map as my starting point, I began wireframing each screen at a medium-fidelity level. Along the way, I discovered several new features and fixes I hadn't considered until I actually started designing. Once the wireframes were in place, I ran usability testing to identify where users got stuck or confused in the flow.</p>
+                    </div>
+                    <div class="wireframes-intro-section">
+                        <h2>Medium Fidelity Wireframes</h2>
+                        <p>To bring my ideas to life, I started by creating medium-fidelity wireframes. This helped me map out the app's core features, layout, and user flow without getting too caught up in visuals just yet.</p>
+                    </div>
+
+                    <!-- Signup Flow -->
+                    <div class="wireframe-flow">
+                        <h3>Signup Flow</h3>
+                        <p>Nobody wants to spend hours messaging strangers only to find out one's a neat freak and the other's living in chaos. So, onboarding handles the basics: preferences, habits, basic information, ID check, and contact verification. This is meant to filter out the fake users and spam so that users can actually find a trustworthy, compatible match.</p>
+                        <a href="img/wireframes_signup.png" class="glightbox research-image-link">
+                            <div class="research-image">
+                                <img src="img/wireframes_signup.png" alt="Sign up flow wireframes">
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Match Flow -->
+                    <div class="wireframe-flow">
+                        <h3>Match Flow</h3>
+                        <p>The match page gives users a quick snapshot of someone's profile, just enough to see if there's potential. If they're interested, they can tap in to view the full profile with more details like budget, compatibility preferences, and answered prompts. When two users match, they get a personalized summary highlighting what they have in common, making it easier to break the ice and start a conversation with context.</p>
+                        <a href="img/wireframes_match.png" class="glightbox research-image-link">
+                            <div class="research-image">
+                                <img src="img/wireframes_match.png" alt="Match flow wireframes">
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Profile Creation Flow -->
+                    <div class="wireframe-flow">
+                        <h3>Profile Creation Flow</h3>
+                        <p>Profile creation focuses on helping users express their personality beyond a static headshot. Users can upload photos that reflect their lifestyle, write a short bio, respond to prompts, and indicate compatibility preferences. An optional voice note feature was also included, allowing tone and personality to come through in ways text alone cannot.</p>
+                        <a href="img/wireframes_profile.png" class="glightbox research-image-link">
+                            <div class="research-image">
+                                <img src="img/wireframes_profile.png" alt="Profile creation flow wireframes">
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Room Creation Flow -->
+                    <div class="wireframe-flow">
+                        <h3>Room Creation Flow</h3>
+                        <p>I wanted this app to put people first, not just listings, so housing info lives right inside the user's profile instead of being its own separate thing. This section is for users who already have a place and just need someone to move in. They can add photos of the house or room, set the rent, list amenities, and cover any other must-knows.</p>
+                        <a href="img/wireframes_room.png" class="glightbox research-image-link">
+                            <div class="research-image">
+                                <img src="img/wireframes_room.png" alt="Room creation flow wireframes">
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Main Navigation Flow -->
+                    <div class="wireframe-flow">
+                        <h3>Main Navigation Flow</h3>
+                        <p>Roommate searching involves juggling a lot of people at different stages, someone you just matched with, someone you're still deciding on, someone you're actively messaging. Rather than bury that in menus, Home, Matches, Saved, and Messages sit in the main nav so users can move between stages without losing their place. Home covers discovery through swipe-style browsing, Matches and Saved separate real interest from maybes, and Messages is reserved for the conversations that actually determine compatibility.</p>
+                        <a href="img/wireframes_main.png" class="glightbox research-image-link">
+                            <div class="research-image">
+                                <img src="img/wireframes_main.png" alt="Main navigation flow wireframes">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Usability Testing -->
+        <section class="cs-section usability-section" id="prototype-test">
+            <div class="cs-container">
+                <div class="usability-layout">
+
+                    <div class="usability-intro-section">
+                        <h2>Usability Testing</h2>
+                        <p>Using the signup flow and IA map as a foundation, I built medium-fidelity wireframes for each core screen. Designing each screen actually surfaced several features and fixes I hadn't planned for, ideas that only became clear once I started working through the details. Once the wireframes were in place, I ran a usability test to see where users got stuck or confused in the flow.</p>
+                    </div>
+
+                    <!-- The Problem Header -->
+                    <div class="problem-header">
+                        <span class="problem-eyebrow">The problem:</span>
+                        <h3 class="problem-headline">Several flows weren't as intuitive as they seemed on paper</h3>
+                    </div>
+
+                    <div class="problem-layout">
+
+                        <!-- Left: sticky mockup -->
+                        <aside class="problem-mockup">
+                            <img src="img/compare.png" alt="Wireframes used during usability testing">
+                            <p class="mockup-caption">Home screen vs match screen</p>
+                        </aside>
+
+                        <!-- Right: compact issue cards -->
+                        <div class="problem-issues">
+                            <p class="issues-intro">Based on testing with 10 participants, I found the following pain points:</p>
+
+                            <div class="issue-card">
+                                <div class="issue-header">
+                                    <div class="issue-icon"><i class="fas fa-layer-group"></i></div>
+                                    <h4>Too Much At Once</h4>
+                                    <span class="issue-tag">Issue 01</span>
+                                </div>
+                                <p>Participants felt overwhelmed by the amount of information shown right away when signing up.</p>
+                            </div>
+
+                            <div class="issue-card">
+                                <div class="issue-header">
+                                    <div class="issue-icon"><i class="fas fa-question"></i></div>
+                                    <h4>Unclear Actions & Icons</h4>
+                                    <span class="issue-tag">Issue 02</span>
+                                </div>
+                                <p>Older participants struggled to recognize icons on their own, so pairing icons with short text labels would make key actions clearer across age groups.</p>
+                            </div>
+
+                            <div class="issue-card">
+                                <div class="issue-header">
+                                    <div class="issue-icon"><i class="fas fa-clone"></i></div>
+                                    <h4>Home & Match Pages Looked Too Similar</h4>
+                                    <span class="issue-tag">Issue 03</span>
+                                </div>
+                                <p>Participants had difficulty telling the Home and Match screens apart at a glance.</p>
+                            </div>
+
+                            <div class="issue-card">
+                                <div class="issue-header">
+                                    <div class="issue-icon"><i class="fas fa-universal-access"></i></div>
+                                    <h4>Missing Accessibility & Mental Health Considerations</h4>
+                                    <span class="issue-tag">Issue 04</span>
+                                </div>
+                                <p>Some users, particularly those with disabilities, may want to find roommates with shared accessibility needs or mental health considerations.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Takeaways (replaces the old annotation column) -->
+                    <div class="testing-takeaways">
+                        <div class="takeaway-card">
+                            <i class="fas fa-bolt"></i>
+                            <p>Testing at the wireframe stage meant these fixes were cheap to make, before any visual design work had been invested.</p>
+                        </div>
+                        <div class="takeaway-card">
+                            <i class="fas fa-users"></i>
+                            <p>Age came up more than expected as a factor in how intuitive icons and navigation felt, a pattern worth testing further with a larger group.</p>
+                        </div>
+                    </div>
+
+                    <!-- Additional Insights -->
+                    <div class="insights-callout-section">
+                        <h3>Additional Insights</h3>
+                        <div class="insights-callout-grid">
+
+                            <div class="insight-callout-card">
+                                <p><strong>Trust drives willingness to message.</strong> Having enough shared or compatible information made the participant feel comfortable enough to actually message someone, reinforcing the value of Nestly's existing trust features (verification, endorsements, compatibility quiz).</p>
+                            </div>
+
+                            <div class="insight-callout-card">
+                                <p><strong>"Save" vs. "Match" depends on urgency.</strong> The participant explained they'd choose to save a profile versus match based on how urgently they needed a roommate, revealing that these two actions serve different intents.</p>
+                            </div>
+
+                            <div class="insight-callout-card">
+                                <p><strong>Conversation starters would help.</strong> The participant expressed interest in built-in prompts to break the ice once matched.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Brand identity -->
+        <section class="cs-section design-section">
+            <div class="cs-container">
+                <div class="brand-identity-layout">
+                    <div class="brand-intro-section">
+                        <h2>Brand Identity</h2>
+                        <p>When exploring logo ideas, I was drawn to nature-inspired symbols that could represent community and shared living. I was tied between using a bee or a bird, both social, cooperative creatures, but after several drafts, I landed on a design featuring a blue bird perched outside a birdhouse. It felt friendly, calm, and symbolic of finding a place that feels like home. To support this tone, I chose a soft blue color scheme that feels approachable and trustworthy.</p>
+                    </div>
+
+                    <!-- Logo Iterations -->
+                    <div class="brand-subsection">
+                        <h3>Logo Iterations</h3>
+                        <a href="img/nestly-logo-iterations.png" class="glightbox research-image-link">
+                            <div class="research-image">
+                                <img src="img/nestly-logo-iterations.png" alt="Nestly logo iterations">
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Final Logo -->
+                    <div class="brand-subsection">
+                        <h3>Final Logo</h3>
+                        <a href="img/nestly-final-logo.png" class="glightbox research-image-link">
+                            <div class="research-image">
+                                <img src="img/nestly-final-logo.png" alt="Nestly final logo">
+                            </div>
+                        </a>
+                        <p class="tagline">Live better, together.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -238,14 +658,15 @@
         </section>
     </main>
 
-    <!-- Footer -->
+        <!-- Footer -->
+<!-- Footer -->
     <footer>
         <div class="footer-card">
             <div class="footer-container">
                 <div class="footer-main">
-                    <h2>Let's work together!</h2>
-                    <p>I'm always excited to collaborate on meaningful projects.</p>
-                    <a href="mailto:hello@ellapasternak.com" class="resume-btn">Get in Touch</a>
+                    <h2>Say hello!</h2>
+                    <p>Always open to new projects, collaborations, and conversations.</p>
+                    <a href="resume.html" class="resume-btn">Resume</a>
                 </div>
                 
                 <div class="footer-section">
@@ -259,7 +680,7 @@
                 </div>
 
                 <div class="footer-section">
-                    <h3>Projects</h3>
+                    <h3>Case Studies</h3>
                     <ul>
                         <li><a href="nestly.html">Nestly</a></li>
                         <li><a href="moviemate.html">MovieMate</a></li>
@@ -269,7 +690,7 @@
                 <div class="footer-section">
                     <h3>Find me</h3>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com" target="_blank" class="social-btn">
+                        <a href="https://www.linkedin.com/in/ella-pasternak" target="_blank" class="social-btn">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
                             </svg>
@@ -288,7 +709,7 @@
             
             <div class="footer-bottom">
                 <div class="footer-logo">
-                    <div class="footer-logo-text">Ep.</div>
+                    <img src="img/EPLogo.png" alt="Ella Pasternak Logo">
                 </div>
                 <p>&copy; 2026 Ella Pasternak. All rights reserved.</p>
             </div>
