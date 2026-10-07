@@ -2636,7 +2636,7 @@ footer {
 }
 
 .nestly-page .insight-card:hover {
-    border-color: #F16C32;
+    border-color: #fb8856;
     box-shadow: 0 8px 20px rgba(255, 153, 51, 0.15);
 }
 
@@ -2644,7 +2644,7 @@ footer {
 .nestly-page .insight-card-icon {
     width: 50px;
     height: 50px;
-    background: #F16C32;
+    background: #fb8856;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -2725,7 +2725,7 @@ footer {
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    background: #F16C32; 
+    background: #fb8856;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2847,7 +2847,7 @@ footer {
     font-style: italic;
     font-size: 1.2rem;
     font-weight: 600;
-    color: #F16C32;
+    color: #fb8856;
 }
 
 .nestly-page .usability-section .problem-headline {
@@ -2907,7 +2907,7 @@ footer {
 .nestly-page .usability-section .issue-card {
     background: var(--white);
     border: 1px solid #E5E5E0;
-    border-left: 4px solid #FF9933;
+    border-left: 4px solid #fb8856;
     border-radius: 12px;
     padding: 1.25rem 1.5rem;
 }
@@ -2924,7 +2924,7 @@ footer {
     height: 38px;
     min-width: 38px;
     border-radius: 50%;
-    background: rgba(255, 153, 51, 0.14);
+    background: rgba(255, 153, 51, 0.22);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2932,7 +2932,7 @@ footer {
 
 .nestly-page .usability-section .issue-icon i {
     font-size: 0.95rem;
-    color: #E67E22;
+    color: #fb8856
 }
 
 .nestly-page .usability-section .issue-header h4 {
@@ -2979,7 +2979,7 @@ footer {
 }
 
 .nestly-page .usability-section .takeaway-card i {
-    color: #FF9933;
+    color: #fb8856;
     font-size: 1.1rem;
     margin-top: 0.2rem;
 }
@@ -3014,7 +3014,7 @@ footer {
 }
 
 .nestly-page .usability-layout {
-    max-width: 1000px;
+    max-width: 800px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -3078,7 +3078,7 @@ footer {
 
 .nestly-page .issue-icon i {
     font-size: 1.4rem;
-    color: #EB5200;
+    color: #fb8856;
 }
 
 .nestly-page .issue-text h3 {
@@ -3133,46 +3133,71 @@ footer {
 }
 
 /* Additional Insights */
-.nestly-page .insights-callout-section {
-    margin-top: 1rem;
+.nestly-page .insights-band {
+    background: #FDF2E7;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    border-radius: 16px; 
 }
 
-.nestly-page .insights-callout-section h3 {
+.nestly-page .insights-band .cs-container {
+    max-width: 100%; 
+    margin: 0;
+    padding: 0;
+}
+
+.nestly-page .insights-band h3 {
     font-family: 'Inter', sans-serif;
-    font-size: 1.3rem;
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-weight: 700;
     color: var(--text-gray);
-    margin: 0 0 1.25rem 0;
+    margin: 0 0 2rem 0;
 }
 
+/* ===== Rectangular cards ===== */
 .nestly-page .insights-callout-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
+    align-items: start;
 }
 
 .nestly-page .insight-callout-card {
     background: var(--white);
-    border-left: 3px solid #FF9933;
-    padding: 1.25rem 1.5rem;
+    border: 4px solid #FF9933;
+    border-radius: 12px;
+    padding: 1.75rem;
+}
+
+.nestly-page .insight-callout-card h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-gray);
+    margin: 0 0 0.75rem 0;
+    line-height: 1.35;
 }
 
 .nestly-page .insight-callout-card p {
     font-family: 'Inter', sans-serif;
+    font-size: 0.92rem;
     line-height: 1.7;
     color: #666;
-    font-size: 0.9rem;
     margin: 0;
-}
-
-.nestly-page .insight-callout-card strong {
-    color: var(--text-gray);
 }
 
 /* Responsive */
 @media (max-width: 900px) {
     .nestly-page .insights-callout-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .nestly-page .insights-band {
+        padding: 2.5rem 1.5rem;
+        margin: 0 -1.5rem;
     }
 }
 
@@ -3215,6 +3240,13 @@ footer {
     margin: 0 auto 2rem auto;
 }
 
+.nestly-page .brand-image img {
+    width: 800px;
+    height: auto;
+    display: block;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
 .nestly-page .brand-intro-section {
     max-width: 800px;
     margin: 0 auto;
@@ -3387,6 +3419,7 @@ footer {
 .nestly-page .wireframes-section {
     background: var(--white);
     padding: 4rem 2rem;
+    padding-bottom: 0rem;
 }
 
 .nestly-page .wireframes-layout {
